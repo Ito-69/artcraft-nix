@@ -1,8 +1,8 @@
 {
   "mirrors": {
-    "github": "ipeglin/artcraft-nix",
-    "gitlab": "ipeglin/artcraft-nix",
-    "gitlabSources": "ipeglin"
+    "github": "Ito-69/artcraft-nix",
+    "gitlab": "Ito-69/artcraft-nix",
+    "gitlabSources": "Ito-69"
   },
   "apps": {
     "designcraft": {
@@ -173,6 +173,12 @@
           "file": "filmcraft-0.4.0-linux-x86_64.AppImage",
           "bin": "filmcraft",
           "hash": "sha256-2EEN6nsrBk7eHq2H3YlLyjU3pN/aGkQpcViEn1a6LUw="
+        },
+        "0.8.0": {
+          "tag": "v0.8.0",
+          "file": "filmcraft-0.8.0-linux-x86_64.AppImage",
+          "bin": "filmcraft",
+          "hash": "sha256-QZVel8iTJDXytruCRXg8ZoeGsz0rfflivQl2QdpoIR4="
         }
       }
     },
@@ -222,6 +228,12 @@
           "file": "lightcraft-0.6.0-linux-x86_64.AppImage",
           "bin": "lightcraft",
           "hash": "sha256-V37wGNzuyNSYDS+bIHguw3hIFYuOZBnMkNMcK1gMGRk="
+        },
+        "0.8.0": {
+          "tag": "v0.8.0",
+          "file": "lightcraft-0.8.0-linux-x86_64.AppImage",
+          "bin": "lightcraft",
+          "hash": "sha256-gdVLCeYLRIwFUX8d6jQivqWZhpKooahAYEZjhbnf2cM="
         }
       }
     },
@@ -259,6 +271,12 @@
           "file": "pdfcraft-0.4.0-linux-x86_64.AppImage",
           "bin": "pdfcraft",
           "hash": "sha256-4hzn3kmRCsyPAypLkGFB2kKzkAI4P7nvM6nYbbvsBdY="
+        },
+        "0.8.0": {
+          "tag": "v0.8.0",
+          "file": "pdfcraft-0.8.0-linux-x86_64.AppImage",
+          "bin": "pdfcraft",
+          "hash": "sha256-a4k5fsEK1QXnMvGJgratFxqrCF2TjKDDA0oA1BmeOPc="
         }
       }
     },
@@ -411,6 +429,84 @@
           "file": "vectorcraft-0.12.0-linux-x86_64.AppImage",
           "bin": "vectorcraft",
           "hash": "sha256-0LnEHzdUKX98aJL3Ep24j0Hn5xjkUteV08HE6ePrRIs="
+        }
+      }
+    },
+    "wordcraft": {
+      "title": "WordCraft",
+      "summary": "Document and text editor",
+      "repo": "storytold/wordcraft",
+      "versions": {
+        "0.7.0": {
+          "tag": "v0.7.0",
+          "file": "wordcraft-0.7.0-linux-x86_64.AppImage",
+          "bin": "wordcraft",
+          "hash": "sha256-fchv8wJfGFvjm/GYIq8k8sUE3erT9S7ZnD1pYLzljU0="
+        }
+      }
+    },
+    "deckcraft": {
+      "title": "DeckCraft",
+      "summary": "Presentation editor",
+      "repo": "storytold/deckcraft",
+      "versions": {
+        "0.7.0": {
+          "tag": "v0.7.0",
+          "file": "deckcraft-0.7.0-linux-x86_64.AppImage",
+          "bin": "deckcraft",
+          "hash": "sha256-U1r9Hn9tOJ7P549KcCtaNnGSF8TOxVauXX8P13WuVYQ="
+        }
+      }
+    },
+    "gridcraft": {
+      "title": "GridCraft",
+      "summary": "Spreadsheet editor",
+      "repo": "storytold/gridcraft",
+      "versions": {
+        "0.7.0": {
+          "tag": "v0.7.0",
+          "file": "gridcraft-0.7.0-linux-x86_64.AppImage",
+          "bin": "gridcraft",
+          "hash": "sha256-LarOi+Nxmv7nJ9LjU6pL0KwieYwxLJLCxtXkLyf3CBI="
+        }
+      }
+    },
+    "cadcraft": {
+      "title": "CadCraft",
+      "summary": "CAD & 3D solid modeling",
+      "repo": "storytold/cadcraft",
+      "versions": {
+        "0.7.0": {
+          "tag": "v0.7.0",
+          "file": "cadcraft-0.7.0-linux-x86_64.AppImage",
+          "bin": "cadcraft",
+          "hash": "sha256-sqooB8iG4brnsAZPR2iKYu1v4foF8Fs1LjYs3GmPC3c="
+        }
+      }
+    },
+    "soundcraft": {
+      "title": "SoundCraft",
+      "summary": "Digital audio workstation",
+      "repo": "storytold/soundcraft",
+      "versions": {
+        "0.7.0": {
+          "tag": "v0.7.0",
+          "file": "soundcraft-0.7.0-linux-x86_64.AppImage",
+          "bin": "soundcraft",
+          "hash": "sha256-gPL+zRMrmpw6wjkWZLCgIUFpyMwOJ76RejcEVTqRTYE="
+        }
+      }
+    },
+    "figcraft": {
+      "title": "FigCraft",
+      "summary": "Collaborative interface design",
+      "repo": "storytold/figcraft",
+      "versions": {
+        "0.6.0": {
+          "tag": "v0.6.0",
+          "file": "figcraft-0.6.0-linux-x86_64.AppImage",
+          "bin": "figcraft",
+          "hash": "sha256-YA8RXdxtnnXwcgwNnFRJwVsz/eJ24IDwE7tEntHaRVM="
         }
       }
     }

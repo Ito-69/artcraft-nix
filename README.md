@@ -5,15 +5,21 @@ open-source native alternatives to the Adobe suite, built from their official
 release AppImages. Every release is verified and mirrored, so installs keep
 working even if the upstream releases disappear.
 
-| App | Replaces | Package |
+| App | Category / Replaces | Package |
 |---|---|---|
-| PhotoCraft | Photoshop | `photocraft` |
-| VectorCraft | Illustrator | `vectorcraft` |
-| DesignCraft | InDesign | `designcraft` |
-| LightCraft | Lightroom | `lightcraft` |
-| FilmCraft | Premiere Pro | `filmcraft` |
-| EffectCraft | After Effects | `effectcraft` |
-| PdfCraft (formerly PrintCraft) | Acrobat | `pdfcraft` |
+| PhotoCraft | Photoshop alternative | `photocraft` |
+| VectorCraft | Illustrator alternative | `vectorcraft` |
+| DesignCraft | InDesign alternative | `designcraft` |
+| LightCraft | Lightroom alternative | `lightcraft` |
+| FilmCraft | Premiere Pro alternative | `filmcraft` |
+| EffectCraft | After Effects alternative | `effectcraft` |
+| PdfCraft | Acrobat / PDF editor | `pdfcraft` |
+| WordCraft | Documents & Word processing | `wordcraft` |
+| DeckCraft | Presentations & Slides | `deckcraft` |
+| GridCraft | Spreadsheets & Tables | `gridcraft` |
+| CadCraft | 3D CAD & Modeling | `cadcraft` |
+| SoundCraft | Digital Audio Workstation | `soundcraft` |
+| FigCraft | Interface & UI Design | `figcraft` |
 
 Unofficial: not affiliated with the ArtCraft authors. x86_64-linux only for now.
 
