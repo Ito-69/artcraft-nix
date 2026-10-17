@@ -21,12 +21,12 @@ working even if the upstream releases disappear.
 | SoundCraft | Digital Audio Workstation | `soundcraft` |
 | FigCraft | Interface & UI Design | `figcraft` |
 
-Unofficial: not affiliated with the ArtCraft authors. x86_64-linux only for now.
+Unofficial: not affiliated with the ArtCraft authors. Fork of [ipeglin/artcraft-nix](https://github.com/ipeglin/artcraft-nix), extended with the full suite including office, CAD, audio and UI design apps. x86_64-linux only for now.
 
 ## Try an app
 
 ```sh
-nix run github:ipeglin/artcraft-nix#photocraft
+nix run github:Ito-69/artcraft-nix#photocraft
 ```
 
 Each package ships the GUI and its `<app>-cli` companion.
@@ -35,7 +35,7 @@ Each package ships the GUI and its `<app>-cli` companion.
 
 ```nix
 # flake.nix
-inputs.artcraft.url = "github:ipeglin/artcraft-nix";
+inputs.artcraft.url = "github:Ito-69/artcraft-nix";
 
 # in your nixosSystem modules
 modules = [
@@ -58,7 +58,7 @@ programs.artcraft = {
 
 Alternatives: `inputs.artcraft.packages.x86_64-linux.<app>`, or
 `overlays.default`, which adds `pkgs.artcraft.<app>` built against your
-nixpkgs. `nix profile install github:ipeglin/artcraft-nix` installs all of them.
+nixpkgs. `nix profile install github:Ito-69/artcraft-nix` installs all of them.
 
 ## Versions
 
@@ -73,12 +73,12 @@ Each version lists three download sources, tried in order:
 
 1. the upstream GitHub release
 2. this repo's release `mirror-<app>`
-3. the GitLab package registry of [ipeglin/artcraft-nix](https://gitlab.com/ipeglin/artcraft-nix)
+3. the GitLab package registry of [Ito-69/artcraft-nix](https://gitlab.com/Ito-69/artcraft-nix)
 
 All of them serve byte-identical files, pinned by the sha256 that upstream
 published, so a mirror cannot substitute anything. If GitHub becomes
 unavailable, the flake is also mirrored to GitLab: use
-`gitlab:ipeglin/artcraft-nix`.
+`gitlab:Ito-69/artcraft-nix`.
 
 Completely offline, from any copy of an AppImage with its original filename:
 
@@ -88,8 +88,8 @@ nix-store --add-fixed sha256 photocraft-0.3.0-linux-x86_64.AppImage
 
 Nix then finds it in the store and never downloads it.
 
-The source code is mirrored too, at `gitlab.com/ipeglin/<repo>-mirror`
-(e.g. [photocraft-mirror](https://gitlab.com/ipeglin/photocraft-mirror)). Pushes
+The source code is mirrored too, at `gitlab.com/Ito69/<repo>-mirror`
+(e.g. [photocraft-mirror](https://gitlab.com/Ito69/photocraft-mirror)). Pushes
 are never forced, so upstream deleting history does not erase the mirror.
 
 ## How it stays current
@@ -110,7 +110,7 @@ are never forced, so upstream deleting history does not erase the mirror.
 - **GitLab token:** the `GITLAB_TOKEN` repo secret is a GitLab personal access
   token (scopes `api`, `write_repository`) and expires yearly. GitLab emails
   before it does. To renew it, create a new token and run
-  `gh secret set GITLAB_TOKEN -R ipeglin/artcraft-nix`. Until then the
+  `gh secret set GITLAB_TOKEN -R Ito-69/artcraft-nix`. Until then the
   GitLab steps fail; the next run after renewal fills in whatever is missing.
 - **"references unknown libraries":** upstream started loading something new.
   Add the nixpkgs package to `runtimeDependencies` in `package.nix` and the
