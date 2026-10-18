@@ -99,7 +99,7 @@ def ensure(data, apps, token, report):
     """Upload whatever any mirror lacks, for every version of every app."""
     gh_repo, gl_project = data["mirrors"]["github"], data["mirrors"]["gitlab"]
     if not token:
-        report.fail("GITLAB_TOKEN not set: GitLab mirror skipped")
+        report.info("GITLAB_TOKEN not set: GitLab mirror skipped")
     on_gitlab = gitlab_versions(gl_project, token) if token else set()
     for app in apps:
         with tempfile.TemporaryDirectory() as tmp:
