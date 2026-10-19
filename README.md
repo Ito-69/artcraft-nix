@@ -88,10 +88,6 @@ nix-store --add-fixed sha256 photocraft-0.3.0-linux-x86_64.AppImage
 
 Nix then finds it in the store and never downloads it.
 
-The source code is mirrored too, at `gitlab.com/Ito69/<repo>-mirror`
-(e.g. [photocraft-mirror](https://gitlab.com/Ito69/photocraft-mirror)). Pushes
-are never forced, so upstream deleting history does not erase the mirror.
-
 ## How it stays current
 
 [`.github/workflows/update.yml`](.github/workflows/update.yml) runs daily
@@ -102,16 +98,11 @@ are never forced, so upstream deleting history does not erase the mirror.
    loads no library outside the set in [`package.nix`](package.nix)
 3. commits passing versions to [`versions.json`](versions.json) (failing ones are
    retried the next day and reported)
-4. fills any gaps in both binary mirrors and pushes the source mirrors
+4. mirrors release binaries to GitHub releases
 5. on Mondays, bumps nixpkgs, and keeps it only if every app still builds
 
 ### Maintainer notes
 
-- **GitLab token:** the `GITLAB_TOKEN` repo secret is a GitLab personal access
-  token (scopes `api`, `write_repository`) and expires yearly. GitLab emails
-  before it does. To renew it, create a new token and run
-  `gh secret set GITLAB_TOKEN -R Ito-69/artcraft-nix`. Until then the
-  GitLab steps fail; the next run after renewal fills in whatever is missing.
 - **"references unknown libraries":** upstream started loading something new.
   Add the nixpkgs package to `runtimeDependencies` in `package.nix` and the
   library name to `KNOWN_LIBS` in `scripts/verify.py`.
