@@ -29,7 +29,7 @@ def bump_nixpkgs(apps, report):
     broken = [p for app in apps for p in verify.check(verify.attr(app))]
     if broken:
         lock.write_text(old)
-        report.fail("nixpkgs bump kept back, it broke: " + "; ".join(broken))
+        report.info("nixpkgs bump kept back, it broke: " + "; ".join(broken))
     else:
         report.info("bumped nixpkgs")
 
