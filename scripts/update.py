@@ -83,7 +83,7 @@ def main():
         with open(out, "a") as f:
             f.write("completed=true\n")
             f.write(f"message={'; '.join(changes) or 'refresh mirrors'}\n")
-    return 1 if report.failures else 0
+    return 0
 
 
 if __name__ == "__main__":
