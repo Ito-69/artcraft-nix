@@ -111,6 +111,12 @@
           "file": "designcraft-0.16.0-linux-x86_64.AppImage",
           "bin": "designcraft",
           "hash": "sha256-7MzaXcOMbKXeGS5FDxv6U5O0O9aDhosOUwauLcl1yCc="
+        },
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "designcraft-0.17.0-linux-x86_64.AppImage",
+          "bin": "designcraft",
+          "hash": "sha256-RFGQQBMRf3/yBgqXELDOOX0QFkUeS5hMyVXcBUfrViE="
         }
       }
     },
@@ -238,6 +244,12 @@
           "file": "effectcraft-0.20.0-linux-x86_64.AppImage",
           "bin": "effectcraft",
           "hash": "sha256-bMranKi1QRS3n3uZwzpRWj5LVKm6ukPrQ06IXk21pfc="
+        },
+        "0.21.0": {
+          "tag": "v0.21.0",
+          "file": "effectcraft-0.21.0-linux-x86_64.AppImage",
+          "bin": "effectcraft",
+          "hash": "sha256-+xnkHjo90oeLA9NQT3WrYWxSf6dUKEkbYBbUZ4n9nyA="
         }
       }
     },
@@ -347,6 +359,12 @@
           "file": "filmcraft-0.16.0-linux-x86_64.AppImage",
           "bin": "filmcraft",
           "hash": "sha256-wr4bZUpt+YCHAhOQF4VlYHUkfk6OUwVFqXiG3sSi8FA="
+        },
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "filmcraft-0.17.0-linux-x86_64.AppImage",
+          "bin": "filmcraft",
+          "hash": "sha256-dm+cVk984SjkhPsrg4xiX3OBRpdFz9PGaRLdyAE2vuM="
         }
       }
     },
@@ -523,6 +541,12 @@
           "file": "pdfcraft-0.17.0-linux-x86_64.AppImage",
           "bin": "pdfcraft",
           "hash": "sha256-kzflcC7mRZ2LzamHbDrjyXJa84x0QJbbwHDXz64kRYY="
+        },
+        "0.18.0": {
+          "tag": "v0.18.0",
+          "file": "pdfcraft-0.18.0-linux-x86_64.AppImage",
+          "bin": "pdfcraft",
+          "hash": "sha256-P9R34y8gaAzwwtmGQl94OhcXiIab6QvlVuWHi1sjGL8="
         }
       }
     },
@@ -644,6 +668,12 @@
           "file": "photocraft-0.19.0-linux-x86_64.AppImage",
           "bin": "photocraft",
           "hash": "sha256-DNMLNm1ACQq6AbCh/gIb3PwCsR/5FRx6rO1bZj25uFY="
+        },
+        "0.20.1": {
+          "tag": "v0.20.1",
+          "file": "photocraft-0.20.1-linux-x86_64.AppImage",
+          "bin": "photocraft",
+          "hash": "sha256-18YF/QXqIzTidx4TWP5NkA27/xTwLXZgcMFB4uOtS78="
         }
       }
     },
@@ -783,6 +813,12 @@
           "file": "vectorcraft-0.20.0-linux-x86_64.AppImage",
           "bin": "vectorcraft",
           "hash": "sha256-tiW66AVY+V2Uuc0M50Ik0qgxgBBtqyYZVZVRyrIW6tQ="
+        },
+        "0.21.0": {
+          "tag": "v0.21.0",
+          "file": "vectorcraft-0.21.0-linux-x86_64.AppImage",
+          "bin": "vectorcraft",
+          "hash": "sha256-lERKCXD0leIlFDXmD+Pb6td/exNr8zRUdCapIM8umFg="
         }
       }
     },
@@ -868,6 +904,12 @@
           "file": "wordcraft-0.14.0-linux-x86_64.AppImage",
           "bin": "wordcraft",
           "hash": "sha256-56L+4FzoYv6RR7brCrbNqeJsq6cpcWhGKAAiHmZjsls="
+        },
+        "0.15.0": {
+          "tag": "v0.15.0",
+          "file": "wordcraft-0.15.0-linux-x86_64.AppImage",
+          "bin": "wordcraft",
+          "hash": "sha256-96lV0sUbA2v+WgM/Sk7E/wwrEeyN/LslIIe5rTqi7K0="
         }
       }
     },
@@ -953,6 +995,12 @@
           "file": "deckcraft-0.14.1-linux-x86_64.AppImage",
           "bin": "deckcraft",
           "hash": "sha256-yeBa8lHYqwsH9gSN+B1BgWFAeVafiu1jgORMYbXrpjU="
+        },
+        "0.15.0": {
+          "tag": "v0.15.0",
+          "file": "deckcraft-0.15.0-linux-x86_64.AppImage",
+          "bin": "deckcraft",
+          "hash": "sha256-VpA0onO2m8qbg3M1W5L48P6TKhxSuWqBxEiBUcaKGZk="
         }
       }
     },
@@ -1044,6 +1092,12 @@
           "file": "gridcraft-0.15.0-linux-x86_64.AppImage",
           "bin": "gridcraft",
           "hash": "sha256-3Hibq+/11XyARNSnenUC6PguKTxAmfblGTnH1Qskv9w="
+        },
+        "0.16.0": {
+          "tag": "v0.16.0",
+          "file": "gridcraft-0.16.0-linux-x86_64.AppImage",
+          "bin": "gridcraft",
+          "hash": "sha256-G0t6BTN+He6tUrPuYCej72aVn8gdhiRParczq+MYOGo="
         }
       }
     },
@@ -1135,6 +1189,12 @@
           "file": "cadcraft-0.16.0-linux-x86_64.AppImage",
           "bin": "cadcraft",
           "hash": "sha256-B0b85ZL45u38zkEVkK6OEPL2hGs192XmO7EHHujI7qg="
+        },
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "cadcraft-0.17.0-linux-x86_64.AppImage",
+          "bin": "cadcraft",
+          "hash": "sha256-DRqOmqeYe5VAbQlyR11Pro79Iq5N7t+7Op3OJsF0Q+w="
         }
       }
     },
@@ -1220,6 +1280,12 @@
           "file": "soundcraft-0.16.0-linux-x86_64.AppImage",
           "bin": "soundcraft",
           "hash": "sha256-UHmI92jehJZ2RzPl5xXgJ5hvlQqEWj6BJK+SqIX1t1Y="
+        },
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "soundcraft-0.17.0-linux-x86_64.AppImage",
+          "bin": "soundcraft",
+          "hash": "sha256-Az1/YA+lkPy39XugeQEPpqs7r2cwf9de/z0frFGaO60="
         }
       }
     },
