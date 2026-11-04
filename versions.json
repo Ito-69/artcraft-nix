@@ -1384,13 +1384,39 @@
       "title": "TextureCraft",
       "summary": "Paint textures on 3D models",
       "repo": "storytold/texturecraft",
-      "versions": {}
+      "versions": {
+        "0.1.0": {
+          "tag": "v0.1.0",
+          "file": "texturecraft-0.1.0-linux-x86_64.AppImage",
+          "bin": "texturecraft",
+          "hash": "sha256-IRh7Ro4WhfYFpGWos7k9rQ4h4gDyK9oh+SOU6wHBFko="
+        },
+        "0.2.0": {
+          "tag": "v0.2.0",
+          "file": "texturecraft-0.2.0-linux-x86_64.AppImage",
+          "bin": "texturecraft",
+          "hash": "sha256-J/vs2Fjhr8TnOKehGYyS0C+4vYIwBYU+CO3lYJHdaaY="
+        },
+        "0.3.0": {
+          "tag": "v0.3.0",
+          "file": "texturecraft-0.3.0-linux-x86_64.AppImage",
+          "bin": "texturecraft",
+          "hash": "sha256-ams+++yMM5VGgvWvnnmrXKQEC6jYmoTEJQmewgKUZUM="
+        }
+      }
     },
     "materialcraft": {
       "title": "MaterialCraft",
       "summary": "Node-based material designer",
       "repo": "storytold/materialcraft",
-      "versions": {}
+      "versions": {
+        "0.1.0": {
+          "tag": "v0.1.0",
+          "file": "materialcraft-0.1.0-linux-x86_64.AppImage",
+          "bin": "materialcraft",
+          "hash": "sha256-WDy5ffSRrSgOcl/2eyoHqIMk8nOQ/BAaV4smgs6U41I="
+        }
+      }
     },
     "craft-anything": {
       "title": "Craft Anything",
