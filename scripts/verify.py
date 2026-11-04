@@ -22,9 +22,12 @@ KNOWN_LIBS = {
     "library",
 }
 # Names an app only mentions in its own text, not libraries it loads. Craft
-# Anything inspects other apps, so its messages name Flutter and Unity files.
+# Anything inspects other apps, so its messages name Flutter and Unity files;
+# LightCraft's "section.calibrationCalibrationview.soloSections" reads as
+# "librationview.so".
 FALSE_POSITIVES = {
     "craft-anything": {"libapp", "libflutter", "libflutter_linux_gtk", "liblog", "libunity", "libunityplayer"},
+    "lightcraft": {"librationview"},
 }
 # The last "lib" before ".so": binaries also embed distro package hints that
 # run together (e.g. "libvulkan1vulkan-loaderlibEGL.so.1").
