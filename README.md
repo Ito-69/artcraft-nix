@@ -94,7 +94,8 @@ Nix then finds it in the store and never downloads it.
 [`.github/workflows/update.yml`](.github/workflows/update.yml) runs daily
 ([`scripts/update.py`](scripts/update.py)):
 
-1. finds the newest stable release of each app and its published sha256
+1. adds any new app from the owners under `discover`, then finds the newest
+   stable release of each app and its published sha256
 2. builds it, runs `<app>-cli --version`, and checks that the binary
    loads no library outside the set in [`package.nix`](package.nix)
 3. replaces the previous version in [`versions.json`](versions.json) if it
@@ -107,7 +108,11 @@ Nix then finds it in the store and never downloads it.
 - **"references unknown libraries":** upstream started loading something new.
   Add the nixpkgs package to `runtimeDependencies` in `package.nix` and the
   library name to `KNOWN_LIBS` in `scripts/verify.py`.
-- **New app:** add an entry under `apps` in `versions.json` with an empty
+- **New app:** apps from the GitHub owners listed under `discover` in
+  `versions.json` (now `storytold`) are added automatically once they publish
+  a stable `<app>-<version>-linux-x86_64.AppImage`; the run summary says so,
+  and the README table above is updated by hand. Apps from anyone else, such
+  as SolidCraft, are added by hand: an entry under `apps` with an empty
   `versions` object; the next run fills it in.
 - **Local run:** `python3 scripts/update.py --no-mirror` discovers and
   verifies without uploading.

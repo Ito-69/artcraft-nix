@@ -1,4 +1,7 @@
 {
+  "discover": [
+    "storytold"
+  ],
   "mirrors": {
     "github": "Ito-69/artcraft-nix"
   },

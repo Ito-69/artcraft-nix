@@ -33,6 +33,19 @@ def bump_nixpkgs(apps, report):
         report.info("bumped nixpkgs")
 
 
+def track_new_apps(data, report):
+    """Add apps that the owners in `discover` published since the last run."""
+    tracked = {info["repo"].lower() for info in data["apps"].values()}
+    for owner in data.get("discover", []):
+        for app, info in upstream.new_apps(owner, tracked):
+            if app in data["apps"]:
+                report.fail(f"{info['repo']}: app name {app} is already used by {data['apps'][app]['repo']}")
+                continue
+            data["apps"][app] = info
+            common.save(data)
+            report.info(f"tracking {app} ({info['repo']}); add it to the README table")
+
+
 def update_versions(data, apps, report):
     """Keep only the newest upstream version of each app, once it builds and checks out.
 
@@ -61,7 +74,7 @@ def update_versions(data, apps, report):
             common.save(data)
             report.fail(f"{app} {newest} not published: " + "; ".join(problems))
         else:
-            report.info(f"{app} {current} -> {newest}" if current else f"added {app} {newest}")
+            report.info(f"updated {app} {current} -> {newest}" if current else f"added {app} {newest}")
 
 
 def main():
@@ -72,10 +85,12 @@ def main():
     args = parser.parse_args()
 
     report, data = common.Report(), common.load()
-    apps = args.only or list(data["apps"])
     lock = common.ROOT / "flake.lock"
     originals = {path: path.read_text() for path in (common.MANIFEST, lock)}
     try:
+        if not args.only:
+            track_new_apps(data, report)
+        apps = args.only or list(data["apps"])
         if args.bump_nixpkgs:
             bump_nixpkgs(apps, report)
         update_versions(data, apps, report)
@@ -87,7 +102,7 @@ def main():
         raise
     report.write()
     if out := os.environ.get("GITHUB_OUTPUT"):
-        changes = [line for line in report.lines if line.startswith(("added", "bumped"))]
+        changes = [line.split(";")[0] for line in report.lines if line.startswith(("tracking", "added", "updated", "bumped"))]
         with open(out, "a") as f:
             f.write("completed=true\n")
             f.write(f"message={'; '.join(changes) or 'refresh mirrors'}\n")
