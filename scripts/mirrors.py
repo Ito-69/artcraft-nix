@@ -106,3 +106,14 @@ def ensure(data, apps, report):
                     subprocess.run(["gh", "release", "delete-asset", f"mirror-{app}", name, "-R", gh_repo, "--yes"],
                                    check=True)
                     report.info(f"removed {name} from mirror-{app}")
+
+
+def remove_untracked(data, report):
+    """Delete `mirror-<app>` releases of apps no longer in the manifest."""
+    repo = data["mirrors"]["github"]
+    releases = common.get_pages(f"https://api.github.com/repos/{repo}/releases", common.github_headers()) or []
+    for rel in releases:
+        tag = rel["tag_name"]
+        if tag.startswith("mirror-") and tag.removeprefix("mirror-") not in data["apps"]:
+            subprocess.run(["gh", "release", "delete", tag, "-R", repo, "--cleanup-tag", "--yes"], check=True)
+            report.info(f"removed release {tag}")
