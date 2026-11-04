@@ -111,7 +111,10 @@ Nix then finds it in the store and never downloads it.
 - **New app:** apps from the GitHub owners listed under `discover` in
   `versions.json` (now `storytold`) are added automatically once they publish
   a stable `<app>-<version>-linux-x86_64.AppImage`; the run summary says so,
-  and the README table above is updated by hand. Apps from anyone else, such
+  and the README table above is updated by hand. Repos under `ignore` (now
+  `storytold/craft-launcher`, which installs apps itself and is not needed on
+  NixOS) are skipped. Removing an app from `apps` also deletes its
+  `mirror-<app>` release on the next run. Apps from anyone else, such
   as SolidCraft, are added by hand: an entry under `apps` with an empty
   `versions` object; the next run fills it in.
 - **Local run:** `python3 scripts/update.py --no-mirror` discovers and

@@ -34,8 +34,12 @@ def bump_nixpkgs(apps, report):
 
 
 def track_new_apps(data, report):
-    """Add apps that the owners in `discover` published since the last run."""
+    """Add apps that the owners in `discover` published since the last run.
+
+    Repos listed under `ignore` are never added.
+    """
     tracked = {info["repo"].lower() for info in data["apps"].values()}
+    tracked |= {repo.lower() for repo in data.get("ignore", [])}
     for owner in data.get("discover", []):
         for app, info in upstream.new_apps(owner, tracked):
             if app in data["apps"]:
@@ -96,6 +100,8 @@ def main():
         update_versions(data, apps, report)
         if not args.no_mirror:
             mirrors.ensure(data, apps, report)
+            if not args.only:
+                mirrors.remove_untracked(data, report)
     except BaseException:
         for path, text in originals.items():
             path.write_text(text)
