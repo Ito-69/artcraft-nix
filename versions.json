@@ -547,6 +547,12 @@
           "file": "pdfcraft-0.18.0-linux-x86_64.AppImage",
           "bin": "pdfcraft",
           "hash": "sha256-P9R34y8gaAzwwtmGQl94OhcXiIab6QvlVuWHi1sjGL8="
+        },
+        "0.18.1": {
+          "tag": "v0.18.1",
+          "file": "pdfcraft-0.18.1-linux-x86_64.AppImage",
+          "bin": "pdfcraft",
+          "hash": "sha256-TOYaj08TdFkedGjweke+VCWUweMdZg2aXVOd2+hQEMY="
         }
       }
     },
@@ -910,6 +916,12 @@
           "file": "wordcraft-0.15.0-linux-x86_64.AppImage",
           "bin": "wordcraft",
           "hash": "sha256-96lV0sUbA2v+WgM/Sk7E/wwrEeyN/LslIIe5rTqi7K0="
+        },
+        "0.15.1": {
+          "tag": "v0.15.1",
+          "file": "wordcraft-0.15.1-linux-x86_64.AppImage",
+          "bin": "wordcraft",
+          "hash": "sha256-6PRPu/BZ8S9c1PadeBJSlynYXTbdT+dKbDf2kyYy8vo="
         }
       }
     },
