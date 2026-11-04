@@ -17,6 +17,7 @@
   alsa-lib,
   # dlopen()ed
   dbus,
+  fontconfig,
   libGL,
   vulkan-loader,
   wayland,
@@ -57,6 +58,7 @@ stdenv.mkDerivation {
   buildInputs = [ stdenv.cc.cc.lib alsa-lib ];
   runtimeDependencies = [
     dbus
+    fontconfig
     libGL
     vulkan-loader
     wayland
