@@ -20,8 +20,11 @@ working even if the upstream releases disappear.
 | CadCraft | 3D CAD & Modeling | `cadcraft` |
 | SoundCraft | Digital Audio Workstation | `soundcraft` |
 | FigCraft | Interface & UI Design | `figcraft` |
+| TextureCraft | Substance Painter alternative | `texturecraft` |
+| MaterialCraft | Substance Designer alternative | `materialcraft` |
+| Craft Anything | Understand and craft software | `craft-anything` |
 
-Unofficial: not affiliated with the ArtCraft authors. Fork of [ipeglin/artcraft-nix](https://github.com/ipeglin/artcraft-nix), extended with the full suite including office, CAD, audio and UI design apps. x86_64-linux only for now.
+Unofficial: not affiliated with the ArtCraft authors. Fork of [ipeglin/artcraft-nix](https://github.com/ipeglin/artcraft-nix), extended with the full suite including office, CAD, audio, UI design and 3D texturing apps. x86_64-linux only for now.
 
 ## Try an app
 

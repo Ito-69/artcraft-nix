@@ -5,7 +5,8 @@
 let
   cfg = config.programs.artcraft;
   artcraft = import ./default.nix { inherit pkgs; };
-  apps = lib.attrNames (lib.importJSON ./versions.json).apps;
+  # Apps with no published version yet have no package; leave them out.
+  apps = lib.filter (app: artcraft ? ${app}) (lib.attrNames (lib.importJSON ./versions.json).apps);
 in
 {
   options.programs.artcraft = {
