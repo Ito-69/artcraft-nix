@@ -33,24 +33,35 @@ def bump_nixpkgs(apps, report):
         report.info("bumped nixpkgs")
 
 
-def add_new_versions(data, apps, report):
-    """Add, build and check every upstream version the manifest lacks."""
+def update_versions(data, apps, report):
+    """Keep only the newest upstream version of each app, once it builds and checks out.
+
+    If the newest release fails the checks, the version already in the
+    manifest stays until a newer one passes.
+    """
     for app in apps:
         info = data["apps"][app]
         found = upstream.discover(info["repo"])
         if found is None:
-            report.fail(f"{app}: upstream {info['repo']} is gone; mirrors keep serving known versions")
+            report.fail(f"{app}: upstream {info['repo']} is gone; the mirror keeps serving the known version")
             continue
-        for version in sorted(set(found) - set(info["versions"]), key=common.vkey):
-            info["versions"][version] = found[version]
-            common.save(data)  # nix builds from the file on disk
-            problems = verify.check(verify.attr(app, version))
-            if problems:
-                del info["versions"][version]
-                common.save(data)
-                report.fail(f"{app} {version} not published: " + "; ".join(problems))
-            else:
-                report.info(f"added {app} {version}")
+        if not found:
+            continue
+        newest = max(found, key=common.vkey)
+        previous = info["versions"]
+        current = max(previous, key=common.vkey) if previous else None
+        if current is not None and common.vkey(current) >= common.vkey(newest):
+            info["versions"] = {current: previous[current]}  # drop any older ones
+            continue
+        info["versions"] = {newest: found[newest]}
+        common.save(data)  # nix builds from the file on disk
+        problems = verify.check(verify.attr(app))
+        if problems:
+            info["versions"] = {current: previous[current]} if current else {}
+            common.save(data)
+            report.fail(f"{app} {newest} not published: " + "; ".join(problems))
+        else:
+            report.info(f"{app} {current} -> {newest}" if current else f"added {app} {newest}")
 
 
 def main():
@@ -67,7 +78,7 @@ def main():
     try:
         if args.bump_nixpkgs:
             bump_nixpkgs(apps, report)
-        add_new_versions(data, apps, report)
+        update_versions(data, apps, report)
         if not args.no_mirror:
             mirrors.ensure(data, apps, report)
     except BaseException:

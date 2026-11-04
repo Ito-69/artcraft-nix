@@ -15,8 +15,8 @@ in
     apps = lib.mkOption {
       type = lib.types.listOf (lib.types.enum (lib.attrNames artcraft));
       default = apps;
-      example = [ "photocraft" "vectorcraft_0_4_0" ];
-      description = "Apps to install: `<app>` for its newest release, `<app>_<x>_<y>_<z>` to pin a version.";
+      example = [ "photocraft" "vectorcraft" ];
+      description = "Apps to install, each at its newest release.";
     };
 
     linkFonts = lib.mkOption {
