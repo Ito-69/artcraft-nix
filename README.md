@@ -55,8 +55,8 @@ not through fontconfig. Options:
 ```nix
 programs.artcraft = {
   enable = true;
-  apps = [ "photocraft" "vectorcraft_0_4_0" ];  # default: every app, newest version
-  linkFonts = false;                            # if you manage /usr/share/fonts yourself
+  apps = [ "photocraft" "vectorcraft" ];  # default: every app
+  linkFonts = false;                     # if you manage /usr/share/fonts yourself
 };
 ```
 
@@ -66,14 +66,14 @@ nixpkgs. `nix profile install github:Ito-69/artcraft-nix` installs all of them.
 
 ## Versions
 
-- `<app>` is the newest release; `<app>_<x>_<y>_<z>` pins a version
-  (e.g. `photocraft_0_3_0`). Every stable release ever published is kept.
+- Only the newest stable release of each app is packaged, as `<app>`.
 - `nix flake update artcraft` picks up new releases; until then your
-  `flake.lock` keeps you where you are.
+  `flake.lock` keeps you where you are. To go back to an older version, pin
+  the flake input to an older commit of this repo.
 
 ## Where the files come from
 
-Each version lists two download sources, tried in order:
+Each app lists two download sources, tried in order:
 
 1. the upstream GitHub release
 2. this repo's release `mirror-<app>`
@@ -94,12 +94,13 @@ Nix then finds it in the store and never downloads it.
 [`.github/workflows/update.yml`](.github/workflows/update.yml) runs daily
 ([`scripts/update.py`](scripts/update.py)):
 
-1. finds new stable releases and their published sha256
-2. builds each one, runs `<app>-cli --version`, and checks that the binary
+1. adds any new app from the owners under `discover`, then finds the newest
+   stable release of each app and its published sha256
+2. builds it, runs `<app>-cli --version`, and checks that the binary
    loads no library outside the set in [`package.nix`](package.nix)
-3. commits passing versions to [`versions.json`](versions.json) (failing ones are
-   retried the next day and reported)
-4. mirrors release binaries to GitHub releases
+3. replaces the previous version in [`versions.json`](versions.json) if it
+   passes (if not, the previous version stays and it is retried the next day)
+4. mirrors the AppImage to GitHub releases and deletes older ones there
 5. on Mondays, bumps nixpkgs, and keeps it only if every app still builds
 
 ### Maintainer notes
@@ -107,7 +108,11 @@ Nix then finds it in the store and never downloads it.
 - **"references unknown libraries":** upstream started loading something new.
   Add the nixpkgs package to `runtimeDependencies` in `package.nix` and the
   library name to `KNOWN_LIBS` in `scripts/verify.py`.
-- **New app:** add an entry under `apps` in `versions.json` with an empty
+- **New app:** apps from the GitHub owners listed under `discover` in
+  `versions.json` (now `storytold`) are added automatically once they publish
+  a stable `<app>-<version>-linux-x86_64.AppImage`; the run summary says so,
+  and the README table above is updated by hand. Apps from anyone else, such
+  as SolidCraft, are added by hand: an entry under `apps` with an empty
   `versions` object; the next run fills it in.
 - **Local run:** `python3 scripts/update.py --no-mirror` discovers and
   verifies without uploading.

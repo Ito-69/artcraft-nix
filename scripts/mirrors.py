@@ -1,7 +1,8 @@
-"""Keep every manifest version mirrored on GitHub releases.
+"""Keep each app's manifest version mirrored on GitHub releases.
 
-One release per app, tag `mirror-<app>`, every version as an asset, plus
-upstream's license files (MIT, Apache-2.0, NOTICE).
+One release per app, tag `mirror-<app>`, holding the AppImage of the version
+in versions.json plus upstream's license files (MIT, Apache-2.0, NOTICE).
+AppImages of older versions are deleted once the manifest no longer lists them.
 """
 
 import subprocess
@@ -63,7 +64,7 @@ def github_assets(repo, app):
 
 def github_create(data, app, licenses):
     info, repo = data["apps"][app], data["mirrors"]["github"]
-    notes = (f"Mirror of every {info['title']} release from https://github.com/{info['repo']}, "
+    notes = (f"Mirror of the latest {info['title']} release from https://github.com/{info['repo']}, "
              "byte-identical (checked against upstream's published sha256).\n\n"
              f"{info['title']} is licensed MIT OR Apache-2.0 by its authors; the license files are attached. "
              "Not affiliated with the upstream project.")
@@ -72,7 +73,7 @@ def github_create(data, app, licenses):
 
 
 def ensure(data, apps, report):
-    """Upload whatever the mirror lacks, for every version of every app."""
+    """Upload the manifest version of every app and delete older AppImages."""
     gh_repo = data["mirrors"]["github"]
     for app in apps:
         with tempfile.TemporaryDirectory() as tmp:
@@ -99,3 +100,9 @@ def ensure(data, apps, report):
                     path.unlink()
                 except Exception as err:  # one bad file must not stop the rest
                     report.fail(f"mirroring {app} {version}: {err}")
+            wanted = {entry["file"] for entry in data["apps"][app]["versions"].values()}
+            for name in sorted(on_github):
+                if name.endswith(".AppImage") and name not in wanted:
+                    subprocess.run(["gh", "release", "delete-asset", f"mirror-{app}", name, "-R", gh_repo, "--yes"],
+                                   check=True)
+                    report.info(f"removed {name} from mirror-{app}")

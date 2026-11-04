@@ -31,3 +31,43 @@ def discover(repo):
                     "hash": common.to_sri(digest.removeprefix("sha256:")),
                 }
     return found
+
+
+def title_from(repo_name):
+    """`texturecraft` -> `TextureCraft`, `craft-anything` -> `Craft Anything`."""
+    words = []
+    for part in repo_name.split("-"):
+        if part.lower().endswith("craft") and len(part) > len("craft"):
+            words.append(part[: -len("craft")].capitalize() + "Craft")
+        else:
+            words.append(part.capitalize())
+    return " ".join(words)
+
+
+def summary_from(description):
+    """The part of a repo description after `Name:`, up to the first period."""
+    text = (description or "").split(":", 1)[-1].strip()
+    return text.split(". ")[0].rstrip(".")
+
+
+def new_apps(owner, tracked_repos):
+    """Repos of owner, not yet tracked, that publish stable x86_64 AppImages.
+
+    Yields (app, info) with the manifest entry for each; versions are left
+    empty for update_versions to fill in.
+    """
+    repos = common.get_pages(f"https://api.github.com/users/{owner}/repos?type=owner", common.github_headers())
+    for repo in repos or []:
+        name = repo["full_name"]
+        if repo["fork"] or repo["archived"] or name.lower() in tracked_repos:
+            continue
+        found = discover(name)
+        if not found:
+            continue
+        newest = found[max(found, key=common.vkey)]
+        yield newest["bin"], {
+            "title": title_from(repo["name"]),
+            "summary": summary_from(repo["description"]) or title_from(repo["name"]),
+            "repo": name,
+            "versions": {},
+        }

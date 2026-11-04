@@ -33,24 +33,48 @@ def bump_nixpkgs(apps, report):
         report.info("bumped nixpkgs")
 
 
-def add_new_versions(data, apps, report):
-    """Add, build and check every upstream version the manifest lacks."""
+def track_new_apps(data, report):
+    """Add apps that the owners in `discover` published since the last run."""
+    tracked = {info["repo"].lower() for info in data["apps"].values()}
+    for owner in data.get("discover", []):
+        for app, info in upstream.new_apps(owner, tracked):
+            if app in data["apps"]:
+                report.fail(f"{info['repo']}: app name {app} is already used by {data['apps'][app]['repo']}")
+                continue
+            data["apps"][app] = info
+            common.save(data)
+            report.info(f"tracking {app} ({info['repo']}); add it to the README table")
+
+
+def update_versions(data, apps, report):
+    """Keep only the newest upstream version of each app, once it builds and checks out.
+
+    If the newest release fails the checks, the version already in the
+    manifest stays until a newer one passes.
+    """
     for app in apps:
         info = data["apps"][app]
         found = upstream.discover(info["repo"])
         if found is None:
-            report.fail(f"{app}: upstream {info['repo']} is gone; mirrors keep serving known versions")
+            report.fail(f"{app}: upstream {info['repo']} is gone; the mirror keeps serving the known version")
             continue
-        for version in sorted(set(found) - set(info["versions"]), key=common.vkey):
-            info["versions"][version] = found[version]
-            common.save(data)  # nix builds from the file on disk
-            problems = verify.check(verify.attr(app, version))
-            if problems:
-                del info["versions"][version]
-                common.save(data)
-                report.fail(f"{app} {version} not published: " + "; ".join(problems))
-            else:
-                report.info(f"added {app} {version}")
+        if not found:
+            continue
+        newest = max(found, key=common.vkey)
+        previous = info["versions"]
+        current = max(previous, key=common.vkey) if previous else None
+        if current is not None and common.vkey(current) >= common.vkey(newest):
+            info["versions"] = {current: previous[current]}  # drop any older ones
+            continue
+        info["versions"] = {newest: found[newest]}
+        common.save(data)  # nix builds from the file on disk
+        problems = verify.check(verify.attr(app))
+        if problems:
+            info["versions"] = {current: previous[current]} if current else {}
+            common.save(data)
+            report.fail(f"{app} {newest} not published: " + "; ".join(problems))
+        else:
+            report.info(f"updated {app} {current} -> {newest}" if current else f"added {app} {newest}")
 
 
 def main():
@@ -61,13 +85,15 @@ def main():
     args = parser.parse_args()
 
     report, data = common.Report(), common.load()
-    apps = args.only or list(data["apps"])
     lock = common.ROOT / "flake.lock"
     originals = {path: path.read_text() for path in (common.MANIFEST, lock)}
     try:
+        if not args.only:
+            track_new_apps(data, report)
+        apps = args.only or list(data["apps"])
         if args.bump_nixpkgs:
             bump_nixpkgs(apps, report)
-        add_new_versions(data, apps, report)
+        update_versions(data, apps, report)
         if not args.no_mirror:
             mirrors.ensure(data, apps, report)
     except BaseException:
@@ -76,7 +102,7 @@ def main():
         raise
     report.write()
     if out := os.environ.get("GITHUB_OUTPUT"):
-        changes = [line for line in report.lines if line.startswith(("added", "bumped"))]
+        changes = [line.split(";")[0] for line in report.lines if line.startswith(("tracking", "added", "updated", "bumped"))]
         with open(out, "a") as f:
             f.write("completed=true\n")
             f.write(f"message={'; '.join(changes) or 'refresh mirrors'}\n")

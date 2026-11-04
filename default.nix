@@ -1,5 +1,4 @@
-# Every ArtCraft app at every mirrored version: `<app>` is the newest release,
-# `<app>_<x>_<y>_<z>` pins one, `default` bundles the newest of each.
+# Every ArtCraft app at its newest release: `<app>`, and `default` bundles all.
 # Versions and hashes live in versions.json, maintained by scripts/update.py.
 { pkgs }:
 
@@ -28,10 +27,7 @@ let
   perApp = app: info:
     let versions = lib.attrNames info.versions;
     in
-    lib.optionalAttrs (versions != [ ]) { ${app} = build app (newest versions); }
-    // lib.listToAttrs (map
-      (v: lib.nameValuePair "${app}_${lib.replaceStrings [ "." ] [ "_" ] v}" (build app v))
-      versions);
+    lib.optionalAttrs (versions != [ ]) { ${app} = build app (newest versions); };
 
   packages = lib.concatMapAttrs perApp data.apps;
 in
