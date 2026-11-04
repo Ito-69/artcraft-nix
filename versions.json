@@ -1379,6 +1379,24 @@
           "hash": "sha256-xSvgRte+pzeQ81hP/KbseTXfIprc6Pjkg7AyQu4qqx8="
         }
       }
+    },
+    "texturecraft": {
+      "title": "TextureCraft",
+      "summary": "Paint textures on 3D models",
+      "repo": "storytold/texturecraft",
+      "versions": {}
+    },
+    "materialcraft": {
+      "title": "MaterialCraft",
+      "summary": "Node-based material designer",
+      "repo": "storytold/materialcraft",
+      "versions": {}
+    },
+    "craft-anything": {
+      "title": "Craft Anything",
+      "summary": "Understand how any software works and craft your own",
+      "repo": "storytold/craft-anything",
+      "versions": {}
     }
   }
 }
