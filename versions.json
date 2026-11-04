@@ -1,8 +1,6 @@
 {
   "mirrors": {
-    "github": "Ito-69/artcraft-nix",
-    "gitlab": "Ito-69/artcraft-nix",
-    "gitlabSources": "Ito-69"
+    "github": "Ito-69/artcraft-nix"
   },
   "apps": {
     "designcraft": {

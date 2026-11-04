@@ -1,7 +1,7 @@
 """Track upstream ArtCraft releases: verify, mirror and record them in versions.json.
 
 Run daily by .github/workflows/update.yml. Needs GH_TOKEN (contents: write on
-this repo) and GITLAB_TOKEN (scopes api + write_repository). Exits non-zero
+this repo). Exits non-zero
 when something needs attention (see the report). Only a run that finished
 writes `completed=true` to $GITHUB_OUTPUT; a crash restores versions.json and
 flake.lock, so the workflow commits nothing half-done.
@@ -14,7 +14,6 @@ import sys
 
 import common
 import mirrors
-import sources
 import upstream
 import verify
 
@@ -70,9 +69,7 @@ def main():
             bump_nixpkgs(apps, report)
         add_new_versions(data, apps, report)
         if not args.no_mirror:
-            token = os.environ.get("GITLAB_TOKEN")
-            mirrors.ensure(data, apps, token, report)
-            sources.mirror(data, apps, token, report)
+            mirrors.ensure(data, apps, report)
     except BaseException:
         for path, text in originals.items():
             path.write_text(text)

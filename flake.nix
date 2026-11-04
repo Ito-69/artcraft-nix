@@ -1,5 +1,5 @@
 {
-  description = "ArtCraft apps (storytold) for Nix/NixOS, every release mirrored to GitHub and GitLab";
+  description = "ArtCraft apps (storytold) for Nix/NixOS, every release mirrored on GitHub";
 
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
