@@ -16,9 +16,18 @@ KNOWN_LIBS = {
     "libwayland-client", "libwayland-egl",
     "libX11", "libX11-xcb", "libxcb", "libXcursor", "libXi",
     "libXrender", "libxkbcommon", "libxkbcommon-x11",
+    "libfontconfig",
     "libva", "libva-drm",
     "libcuda", "libnvcuvid", "libnvidia-encode",
     "library",
+}
+# Names an app only mentions in its own text, not libraries it loads. Craft
+# Anything inspects other apps, so its messages name Flutter and Unity files;
+# LightCraft's "section.calibrationCalibrationview.soloSections" reads as
+# "librationview.so".
+FALSE_POSITIVES = {
+    "craft-anything": {"libapp", "libflutter", "libflutter_linux_gtk", "liblog", "libunity", "libunityplayer"},
+    "lightcraft": {"librationview"},
 }
 # The last "lib" before ".so": binaries also embed distro package hints that
 # run together (e.g. "libvulkan1vulkan-loaderlibEGL.so.1").
@@ -41,12 +50,13 @@ def check(name):
     else:
         return [f"nix build .#{name} failed:\n{proc.stderr[-3000:]}"]
     out = Path(proc.stdout.split()[-1])
+    allowed = KNOWN_LIBS | FALSE_POSITIVES.get(name.split("_")[0], set())
     problems = []
     for binary in sorted((out / "bin").iterdir()):
         data = binary.read_bytes()
         if not data.startswith(b"\x7fELF"):
             continue  # makeWrapper script; its target is checked too
-        unknown = {m.decode() for m in SONAME.findall(data)} - KNOWN_LIBS
+        unknown = {m.decode() for m in SONAME.findall(data)} - allowed
         if unknown:
             problems.append(f"{binary.name} references unknown libraries: {', '.join(sorted(unknown))}")
         if binary.name.endswith("-cli"):

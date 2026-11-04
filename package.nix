@@ -17,6 +17,7 @@
   alsa-lib,
   # dlopen()ed
   dbus,
+  fontconfig,
   libGL,
   vulkan-loader,
   wayland,
@@ -40,14 +41,13 @@ stdenv.mkDerivation {
   src = appimageTools.extract {
     pname = release.bin;
     inherit version;
-    # Upstream first, then this flake's mirrors. fetchurl names the store path
+    # Upstream first, then this flake's GitHub mirror. fetchurl names the store path
     # after the file, so `nix-store --add-fixed sha256 <file>` also satisfies
     # it with no network at all.
     src = fetchurl {
       urls = [
         "https://github.com/${info.repo}/releases/download/${release.tag}/${release.file}"
         "https://github.com/${mirrors.github}/releases/download/mirror-${app}/${release.file}"
-        "https://gitlab.com/api/v4/projects/${lib.escapeURL mirrors.gitlab}/packages/generic/${app}/${version}/${release.file}"
       ];
       inherit (release) hash;
     };
@@ -57,6 +57,7 @@ stdenv.mkDerivation {
   buildInputs = [ stdenv.cc.cc.lib alsa-lib ];
   runtimeDependencies = [
     dbus
+    fontconfig
     libGL
     vulkan-loader
     wayland

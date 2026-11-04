@@ -23,6 +23,7 @@ working even if the upstream releases disappear.
 | TextureCraft | Substance Painter alternative | `texturecraft` |
 | MaterialCraft | Substance Designer alternative | `materialcraft` |
 | Craft Anything | Understand and craft software | `craft-anything` |
+| SolidCraft | Parametric 3D CAD (by Tangency Labs) | `solidcraft` |
 
 Unofficial: not affiliated with the ArtCraft authors. Fork of [ipeglin/artcraft-nix](https://github.com/ipeglin/artcraft-nix), extended with the full suite including office, CAD, audio, UI design and 3D texturing apps. x86_64-linux only for now.
 
@@ -72,16 +73,13 @@ nixpkgs. `nix profile install github:Ito-69/artcraft-nix` installs all of them.
 
 ## Where the files come from
 
-Each version lists three download sources, tried in order:
+Each version lists two download sources, tried in order:
 
 1. the upstream GitHub release
 2. this repo's release `mirror-<app>`
-3. the GitLab package registry of [Ito-69/artcraft-nix](https://gitlab.com/Ito-69/artcraft-nix)
 
-All of them serve byte-identical files, pinned by the sha256 that upstream
-published, so a mirror cannot substitute anything. If GitHub becomes
-unavailable, the flake is also mirrored to GitLab: use
-`gitlab:Ito-69/artcraft-nix`.
+Both serve byte-identical files, pinned by the sha256 that upstream
+published, so the mirror cannot substitute anything.
 
 Completely offline, from any copy of an AppImage with its original filename:
 
@@ -118,4 +116,4 @@ Nix then finds it in the store and never downloads it.
 
 The packaging in this repo is MIT ([LICENSE](LICENSE)). The ArtCraft apps are
 licensed MIT OR Apache-2.0 by their authors. Their license files are attached
-to every mirror release and GitLab package.
+to every mirror release.

@@ -1,8 +1,6 @@
 {
   "mirrors": {
-    "github": "Ito-69/artcraft-nix",
-    "gitlab": "Ito-69/artcraft-nix",
-    "gitlabSources": "Ito-69"
+    "github": "Ito-69/artcraft-nix"
   },
   "apps": {
     "designcraft": {
@@ -1422,6 +1420,12 @@
       "title": "Craft Anything",
       "summary": "Understand how any software works and craft your own",
       "repo": "storytold/craft-anything",
+      "versions": {}
+    },
+    "solidcraft": {
+      "title": "SolidCraft",
+      "summary": "Parametric 3D CAD",
+      "repo": "tangency-labs/solidcraft",
       "versions": {}
     }
   }
