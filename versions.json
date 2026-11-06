@@ -209,11 +209,11 @@
       "summary": "Understand how any software works and craft your own",
       "repo": "storytold/craft-anything",
       "versions": {
-        "0.3.0": {
-          "tag": "v0.3.0",
-          "file": "craft-anything-0.3.0-linux-x86_64.AppImage",
+        "0.4.0": {
+          "tag": "v0.4.0",
+          "file": "craft-anything-0.4.0-linux-x86_64.AppImage",
           "bin": "craft-anything",
-          "hash": "sha256-uSz0YGGN6fKXWUxlkjhGkPqZ/Enhk6RMIAhVGCLw5SI="
+          "hash": "sha256-hQIwBSDAZVe/WaA/+2oSBZCeUh6W5OewKchGwEA981o="
         }
       }
     },
