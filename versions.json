@@ -14,11 +14,11 @@
       "summary": "Lay out magazines, books and print documents",
       "repo": "storytold/designcraft",
       "versions": {
-        "0.18.0": {
-          "tag": "v0.18.0",
-          "file": "designcraft-0.18.0-linux-x86_64.AppImage",
+        "0.19.0": {
+          "tag": "v0.19.0",
+          "file": "designcraft-0.19.0-linux-x86_64.AppImage",
           "bin": "designcraft",
-          "hash": "sha256-ATZAkg8ArypPygnBvNRNl71AT2jhvYZlN3M18sEsINM="
+          "hash": "sha256-6CINfkF3kOFSjchNTbX7IpPdAyfmLuKfjKA/CSgB6aU="
         }
       }
     },
@@ -27,11 +27,11 @@
       "summary": "Motion graphics and visual effects compositor",
       "repo": "storytold/effectcraft",
       "versions": {
-        "0.22.0": {
-          "tag": "v0.22.0",
-          "file": "effectcraft-0.22.0-linux-x86_64.AppImage",
+        "0.23.0": {
+          "tag": "v0.23.0",
+          "file": "effectcraft-0.23.0-linux-x86_64.AppImage",
           "bin": "effectcraft",
-          "hash": "sha256-w71weLIQHvdjm/ziTTIXBZrl5j+BwkxCFsPEvoEqZ1I="
+          "hash": "sha256-gWjycyfy7bBR4mhHXDdjFHmqCIk/HoiwrdcX1fgqFY8="
         }
       }
     },
@@ -40,11 +40,11 @@
       "summary": "Edit video, color and sound",
       "repo": "storytold/filmcraft",
       "versions": {
-        "0.18.0": {
-          "tag": "v0.18.0",
-          "file": "filmcraft-0.18.0-linux-x86_64.AppImage",
+        "0.19.0": {
+          "tag": "v0.19.0",
+          "file": "filmcraft-0.19.0-linux-x86_64.AppImage",
           "bin": "filmcraft",
-          "hash": "sha256-Py2F4xQUgY+a5WklS72ywk3F+b+z9HplhwYR7v9L5H0="
+          "hash": "sha256-LwnP9pY7VbwhYBWAYK+N4iaw7I/CI6GYsQFFpY4jj+g="
         }
       }
     },
@@ -53,11 +53,11 @@
       "summary": "Organise photos and develop raw files, non-destructively",
       "repo": "storytold/lightcraft",
       "versions": {
-        "0.19.0": {
-          "tag": "v0.19.0",
-          "file": "lightcraft-0.19.0-linux-x86_64.AppImage",
+        "0.20.0": {
+          "tag": "v0.20.0",
+          "file": "lightcraft-0.20.0-linux-x86_64.AppImage",
           "bin": "lightcraft",
-          "hash": "sha256-I3j8us0QoxaMuAcnKBEEZ/1GPksJ8UoNEg+8JPA2s2c="
+          "hash": "sha256-Zr4ekYXVb2AIbpp8AZBk3SONlVMcE8DhyDpSf863PhA="
         }
       }
     },
@@ -66,11 +66,11 @@
       "summary": "Read, organize, combine, split and secure PDFs",
       "repo": "storytold/pdfcraft",
       "versions": {
-        "0.19.0": {
-          "tag": "v0.19.0",
-          "file": "pdfcraft-0.19.0-linux-x86_64.AppImage",
+        "0.20.0": {
+          "tag": "v0.20.0",
+          "file": "pdfcraft-0.20.0-linux-x86_64.AppImage",
           "bin": "pdfcraft",
-          "hash": "sha256-fW9YdaTWjPH9K+jbnzBTFCwlBzUMF/GEEjDvJsIsCzY="
+          "hash": "sha256-An5iKZuCNTYANz5sp0xEEhPvVAbnDSf38a734Fp4h40="
         }
       }
     },
@@ -79,11 +79,11 @@
       "summary": "Edit photos and layered Photoshop documents",
       "repo": "storytold/photocraft",
       "versions": {
-        "0.21.0": {
-          "tag": "v0.21.0",
-          "file": "photocraft-0.21.0-linux-x86_64.AppImage",
+        "0.22.0": {
+          "tag": "v0.22.0",
+          "file": "photocraft-0.22.0-linux-x86_64.AppImage",
           "bin": "photocraft",
-          "hash": "sha256-dyZTOtqliWQT0s4L6FjVIiVkUL/vJE+8VDO+1Pmfpgs="
+          "hash": "sha256-zuk05sOMD/f4zX7gNpQSi+Bb4Tf8QwEYDi9xbn0qH58="
         }
       }
     },
@@ -92,11 +92,11 @@
       "summary": "Draw and edit vector illustrations, SVG and PDF",
       "repo": "storytold/vectorcraft",
       "versions": {
-        "0.22.0": {
-          "tag": "v0.22.0",
-          "file": "vectorcraft-0.22.0-linux-x86_64.AppImage",
+        "0.23.0": {
+          "tag": "v0.23.0",
+          "file": "vectorcraft-0.23.0-linux-x86_64.AppImage",
           "bin": "vectorcraft",
-          "hash": "sha256-CaaNIiMlMCGcEmQ7t+ntprH2d4y/ny8vxG/5biJZ97A="
+          "hash": "sha256-ihMPRI+o3/CiedzvylYin1cCyzQRIyY0NtWHxFviqOQ="
         }
       }
     },
@@ -105,11 +105,11 @@
       "summary": "Document and text editor",
       "repo": "storytold/wordcraft",
       "versions": {
-        "0.16.0": {
-          "tag": "v0.16.0",
-          "file": "wordcraft-0.16.0-linux-x86_64.AppImage",
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "wordcraft-0.17.0-linux-x86_64.AppImage",
           "bin": "wordcraft",
-          "hash": "sha256-mArB1pGPHB4MJA2Fk3TyKxnlJNOvM3La7xNExaCXrhc="
+          "hash": "sha256-YGs64zDHZ8+hkoA9uo63udKcZs3ynQyr3gg/F/Bq0Ws="
         }
       }
     },
@@ -118,11 +118,11 @@
       "summary": "Presentation editor",
       "repo": "storytold/deckcraft",
       "versions": {
-        "0.16.0": {
-          "tag": "v0.16.0",
-          "file": "deckcraft-0.16.0-linux-x86_64.AppImage",
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "deckcraft-0.17.0-linux-x86_64.AppImage",
           "bin": "deckcraft",
-          "hash": "sha256-EhHYtRc3fu0PwDfWTa7xt1t+4njgYgqw1+e+tuhhg/c="
+          "hash": "sha256-oD0vCRpUHDKxT09n3olynShpjcKT8fmmIvVBnWQ9pZc="
         }
       }
     },
@@ -131,11 +131,11 @@
       "summary": "Spreadsheet editor",
       "repo": "storytold/gridcraft",
       "versions": {
-        "0.17.0": {
-          "tag": "v0.17.0",
-          "file": "gridcraft-0.17.0-linux-x86_64.AppImage",
+        "0.18.0": {
+          "tag": "v0.18.0",
+          "file": "gridcraft-0.18.0-linux-x86_64.AppImage",
           "bin": "gridcraft",
-          "hash": "sha256-BFXIY1NYItlRoakf3ujdApNp4PL5P3rJnEkW73Cod2E="
+          "hash": "sha256-/eL5mCrHaQJlIctvcQ7Ja02RmxY0rWixWyub9iRnAgw="
         }
       }
     },
@@ -144,11 +144,11 @@
       "summary": "CAD & 3D solid modeling",
       "repo": "storytold/cadcraft",
       "versions": {
-        "0.18.0": {
-          "tag": "v0.18.0",
-          "file": "cadcraft-0.18.0-linux-x86_64.AppImage",
+        "0.19.0": {
+          "tag": "v0.19.0",
+          "file": "cadcraft-0.19.0-linux-x86_64.AppImage",
           "bin": "cadcraft",
-          "hash": "sha256-zsTM/lsRya2mRIjm8qZz3nLTDjVMqxnmsTv85AJgGCc="
+          "hash": "sha256-AZ0KSroVUPr5FiTo0686344n/uGZdXm1T5hfaTOVuvk="
         }
       }
     },
@@ -157,11 +157,11 @@
       "summary": "Digital audio workstation",
       "repo": "storytold/soundcraft",
       "versions": {
-        "0.18.0": {
-          "tag": "v0.18.0",
-          "file": "soundcraft-0.18.0-linux-x86_64.AppImage",
+        "0.19.0": {
+          "tag": "v0.19.0",
+          "file": "soundcraft-0.19.0-linux-x86_64.AppImage",
           "bin": "soundcraft",
-          "hash": "sha256-yD3iYsU9eK2zb0OeBmGeDcrA696w7RaIQ/yxQek7Abo="
+          "hash": "sha256-qt7XTk8TLAM6zBIjx3anTlmnUdyQiEG0wxVy44k5GY8="
         }
       }
     },
@@ -170,11 +170,11 @@
       "summary": "Collaborative interface design",
       "repo": "storytold/figcraft",
       "versions": {
-        "0.16.0": {
-          "tag": "v0.16.0",
-          "file": "figcraft-0.16.0-linux-x86_64.AppImage",
+        "0.17.0": {
+          "tag": "v0.17.0",
+          "file": "figcraft-0.17.0-linux-x86_64.AppImage",
           "bin": "figcraft",
-          "hash": "sha256-xlIDCldOcw/1ce95XDBa8m+qh0dXRfGj5VOuajlwZnU="
+          "hash": "sha256-p0nZ+AdMvS3H0EoW1HJiABolKDkfoVO9bFxOT4TI5BQ="
         }
       }
     },
@@ -183,11 +183,11 @@
       "summary": "Paint textures on 3D models",
       "repo": "storytold/texturecraft",
       "versions": {
-        "0.4.0": {
-          "tag": "v0.4.0",
-          "file": "texturecraft-0.4.0-linux-x86_64.AppImage",
+        "0.5.0": {
+          "tag": "v0.5.0",
+          "file": "texturecraft-0.5.0-linux-x86_64.AppImage",
           "bin": "texturecraft",
-          "hash": "sha256-Csr1xUWwcMA+03ydaIcR1WaAzNixK1/MxFT2v9ZW6JM="
+          "hash": "sha256-so8Kf2ldQfWAn6UbhYjXG5k388X1hi7GEJB9CW7lzQA="
         }
       }
     },
@@ -196,11 +196,11 @@
       "summary": "Node-based material designer",
       "repo": "storytold/materialcraft",
       "versions": {
-        "0.2.0": {
-          "tag": "v0.2.0",
-          "file": "materialcraft-0.2.0-linux-x86_64.AppImage",
+        "0.3.0": {
+          "tag": "v0.3.0",
+          "file": "materialcraft-0.3.0-linux-x86_64.AppImage",
           "bin": "materialcraft",
-          "hash": "sha256-0CIOqQ5JBWG6N9UNU3vxdiV69NFZw+rpddvfOq7MRKE="
+          "hash": "sha256-rKIn8H0AR7xi3tj83mPdzDwQUZYPWTwCkZTW6d1Kaz0="
         }
       }
     },
@@ -209,11 +209,11 @@
       "summary": "Understand how any software works and craft your own",
       "repo": "storytold/craft-anything",
       "versions": {
-        "0.5.0": {
-          "tag": "v0.5.0",
-          "file": "craft-anything-0.5.0-linux-x86_64.AppImage",
+        "0.6.0": {
+          "tag": "v0.6.0",
+          "file": "craft-anything-0.6.0-linux-x86_64.AppImage",
           "bin": "craft-anything",
-          "hash": "sha256-s2Io6KZBlm186m450sl+OCw4ukmowb1x5GGMxdUAL+Q="
+          "hash": "sha256-mswr764Dgd7p3OvSVbzcdZKxafTvR3nC4tQj8Xz2vzk="
         }
       }
     },
