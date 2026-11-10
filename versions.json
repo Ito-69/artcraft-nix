@@ -230,6 +230,19 @@
         }
       }
     },
+    "mailcraft": {
+      "title": "MailCraft",
+      "summary": "Mail, calendar, contacts and tasks",
+      "repo": "UCS-Care-Group/mailcraft",
+      "versions": {
+        "0.11.1": {
+          "tag": "v0.11.1",
+          "file": "mailcraft-0.11.1-linux-x86_64.AppImage",
+          "bin": "mailcraft",
+          "hash": "sha256-qAHgX6nidFJAXFuXqsQ1zbXBumci4sL5Ekc7Tg8tleo="
+        }
+      }
+    },
     "artcraft": {
       "title": "ArtCraft",
       "summary": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",

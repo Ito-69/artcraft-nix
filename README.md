@@ -24,6 +24,7 @@ working even if the upstream releases disappear.
 | MaterialCraft | Substance Designer alternative | `materialcraft` |
 | Craft Anything | Understand and craft software | `craft-anything` |
 | SolidCraft | Parametric 3D CAD (by Tangency Labs) | `solidcraft` |
+| MailCraft | Mail, calendar, contacts and tasks (by UCS Care Group) | `mailcraft` |
 
 Unofficial: not affiliated with the ArtCraft authors. Fork of [ipeglin/artcraft-nix](https://github.com/ipeglin/artcraft-nix), extended with the full suite including office, CAD, audio, UI design and 3D texturing apps. x86_64-linux only for now.
 
