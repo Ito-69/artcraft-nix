@@ -248,6 +248,19 @@
       "summary": "ArtCraft is an intentional crafting engine for artists, designers, and filmmakers",
       "repo": "storytold/artcraft",
       "versions": {}
+    },
+    "anicraft": {
+      "title": "AniCraft",
+      "summary": "An open-source 2D animation editor written from scratch in pure Rust",
+      "repo": "storytold/anicraft",
+      "versions": {
+        "0.1.0": {
+          "tag": "v0.1.0",
+          "file": "anicraft-0.1.0-linux-x86_64.AppImage",
+          "bin": "anicraft",
+          "hash": "sha256-pBnZxyC915lyyuvZ0gdwTR6ftqZge9jf1N2jaTTT4xY="
+        }
+      }
     }
   }
 }
