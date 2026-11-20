@@ -222,11 +222,11 @@
       "summary": "Parametric 3D CAD",
       "repo": "tangency-labs/solidcraft",
       "versions": {
-        "0.44.1": {
-          "tag": "v0.44.1",
-          "file": "solidcraft-0.44.1-linux-x86_64.AppImage",
+        "0.45.0": {
+          "tag": "v0.45.0",
+          "file": "solidcraft-0.45.0-linux-x86_64.AppImage",
           "bin": "solidcraft",
-          "hash": "sha256-bkcr1/VXo8BWTkVIxGCxuE2QYjfGivMn5X2UaxPlHPQ="
+          "hash": "sha256-rEUzhf/UXtWcYQS8wwqgHLhTvP4zi96qfkLCTMbNHC8="
         }
       }
     },
