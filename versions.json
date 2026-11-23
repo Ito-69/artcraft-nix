@@ -66,11 +66,11 @@
       "summary": "Read, organize, combine, split and secure PDFs",
       "repo": "storytold/pdfcraft",
       "versions": {
-        "0.21.1": {
-          "tag": "v0.21.1",
-          "file": "pdfcraft-0.21.1-linux-x86_64.AppImage",
+        "0.22.0": {
+          "tag": "v0.22.0",
+          "file": "pdfcraft-0.22.0-linux-x86_64.AppImage",
           "bin": "pdfcraft",
-          "hash": "sha256-cwJ2zamt2z1I8mxgJobRj8W8Dr42CmCi9SLXDP1CjSE="
+          "hash": "sha256-dx9hsHqvjMF+c8sfk/vohSbyewqoL/MtBxDiw3X0kkg="
         }
       }
     },
@@ -222,11 +222,11 @@
       "summary": "Parametric 3D CAD",
       "repo": "tangency-labs/solidcraft",
       "versions": {
-        "0.45.0": {
-          "tag": "v0.45.0",
-          "file": "solidcraft-0.45.0-linux-x86_64.AppImage",
+        "0.47.0": {
+          "tag": "v0.47.0",
+          "file": "solidcraft-0.47.0-linux-x86_64.AppImage",
           "bin": "solidcraft",
-          "hash": "sha256-rEUzhf/UXtWcYQS8wwqgHLhTvP4zi96qfkLCTMbNHC8="
+          "hash": "sha256-IbtAFaNBq+nMyer2bchWR8RUlLlMV2feaV5NfQT4S1U="
         }
       }
     },
