@@ -105,11 +105,11 @@
       "summary": "Document and text editor",
       "repo": "storytold/wordcraft",
       "versions": {
-        "0.18.1": {
-          "tag": "v0.18.1",
-          "file": "wordcraft-0.18.1-linux-x86_64.AppImage",
+        "0.19.1": {
+          "tag": "v0.19.1",
+          "file": "wordcraft-0.19.1-linux-x86_64.AppImage",
           "bin": "wordcraft",
-          "hash": "sha256-u8XBWwbUQDz9WllHW9+SZKScK88fktEjMRtQqdzjyIg="
+          "hash": "sha256-EBdv+ouLTg0phRbGVrIBlZu4KARE8FnXuIOLamkVkN4="
         }
       }
     },
@@ -118,11 +118,11 @@
       "summary": "Presentation editor",
       "repo": "storytold/deckcraft",
       "versions": {
-        "0.18.1": {
-          "tag": "v0.18.1",
-          "file": "deckcraft-0.18.1-linux-x86_64.AppImage",
+        "0.19.1": {
+          "tag": "v0.19.1",
+          "file": "deckcraft-0.19.1-linux-x86_64.AppImage",
           "bin": "deckcraft",
-          "hash": "sha256-aN+fBA0/bEzkqQSq3sYzlh+hmSSPChqjZvpkWXrgmGc="
+          "hash": "sha256-gpXQ+3lbvQx6uK6XzfCZPh5s8U2QqsNaq3i4Ftzaov4="
         }
       }
     },
