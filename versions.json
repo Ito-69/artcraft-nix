@@ -222,11 +222,11 @@
       "summary": "Parametric 3D CAD",
       "repo": "tangency-labs/solidcraft",
       "versions": {
-        "0.50.0": {
-          "tag": "v0.50.0",
-          "file": "solidcraft-0.50.0-linux-x86_64.AppImage",
+        "0.51.2": {
+          "tag": "v0.51.2",
+          "file": "solidcraft-0.51.2-linux-x86_64.AppImage",
           "bin": "solidcraft",
-          "hash": "sha256-86/Q31TfXPuigf4NKwR2+H8VRgZGS9IbAJQiYGNQXYg="
+          "hash": "sha256-qhC/prT2TjztmevEZ45fVfmbsDsEI5bOkKWdNgb4Li4="
         }
       }
     },
@@ -254,11 +254,11 @@
       "summary": "An open-source 2D animation editor written from scratch in pure Rust",
       "repo": "storytold/anicraft",
       "versions": {
-        "0.2.1": {
-          "tag": "v0.2.1",
-          "file": "anicraft-0.2.1-linux-x86_64.AppImage",
+        "0.3.0": {
+          "tag": "v0.3.0",
+          "file": "anicraft-0.3.0-linux-x86_64.AppImage",
           "bin": "anicraft",
-          "hash": "sha256-NSRWOE0egvNz2DbcvNnxRzsWA8XJx7GF12MhhHAJGzE="
+          "hash": "sha256-L27QHg5P+hfF13EieDYRPgMjqAbuCn2L41MKAAMiyRE="
         }
       }
     }
